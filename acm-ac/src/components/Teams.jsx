@@ -66,7 +66,7 @@ const TeamSection = () => {
         concept: 'A cute, curious robot that loves collecting human stuff. Always asking questions and mimicking humans.',
       },
       logo: '/images/ai-logo.svg',
-      link: '/ai',add 
+      link: '/ai', 
     },
     {
       name: 'Cybersecurity',
@@ -112,7 +112,7 @@ const TeamSection = () => {
                 {team.name}
               </h3>
               <p className=" font-['Raleway'] font-normal text-white">{team.description}</p>
-              <div className="mt-4 font-['Raleway'] font-mono text-sm text-white">
+              <div className="mt-4 font-['Raleway'] text-sm text-white">
                 <strong>Mascot:</strong> {team.mascot.name}
                 <br />
                 <em>{team.mascot.concept}</em>
