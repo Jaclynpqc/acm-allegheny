@@ -31,19 +31,19 @@ const FloatingShape = ({ children, className, delay }) => (
 
 const HeroSection = () => {
   const responsiveText = {
-    heading: "text-4xl sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl",
+    heading: " text-5xl sm:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl",
     description: "text-lg sm:text-xl lg:text-2xl",
     badge: "text-sm sm:text-base lg:text-lg",
   };
 
   return (
     // Changed to min-h-screen to ensure full viewport height
-    <div className="relative min-h-screen w-full bg-acmblack overflow-hidden">
+    <div className="relative h-[85vh] bg-acmblack overflow-hidden">
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="grid grid-cols-6 sm:grid-cols-8 lg:grid-cols-12 gap-4 h-full w-full">
           {[...Array(144)].map((_, i) => (
-            <div key={i} className="border border-acmturquoise/20" />
+            <div key={i} className="border border-acmturquoise" />
           ))}
         </div>
       </div>
@@ -57,7 +57,7 @@ const HeroSection = () => {
         <Star className="w-8 h-8 sm:w-10 sm:h-10 text-acmneon animate-spin" />
       </FloatingShape>
       
-      <FloatingShape className="bottom-[20%] left-[20%] sm:bottom-32 sm:left-40" delay="0.3s">
+      <FloatingShape className="top-[60%] left-[20%] sm:bottom-32 sm:left-40" delay="0.3s">
         <div className="w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-acmturquoise animate-ping" />
       </FloatingShape>
       
@@ -71,17 +71,17 @@ const HeroSection = () => {
           <div className="max-w-8xl mx-auto text-center space-y-6 sm:space-y-8 py-12 sm:py-16 lg:py-20">
             {/* Welcome Badge */}
             <div className="inline-block animate-bounce">
-              <span className={`bg-acmblue px-6 py-3 rounded-full text-white font-medium ${responsiveText.badge}`}>
+              <span className={`bg-acmblue px-6 py-3 rounded-full text-white font-['Raleway'] ${responsiveText.badge}`}>
                 Welcome to ACM Chapter
               </span>
             </div>
 
             {/* Main Heading */}
-            <h1 className={`${responsiveText.heading} font-bold leading-tight`}>
+            <h1 className={`${responsiveText.heading} font-['Montserrat'] font-black leading-tight`}>
               <span className="block text-white mb-4">
                 FOR THE MAKERS,
               </span>
-              <span className="block text-acmneon animate-pulse">
+              <span className="block text-acmneon animate-pulse mb-4">
                 THE DREAMERS,
               </span>
               <span className="block bg-gradient-to-r from-acmpink via-acmorange to-acmred bg-clip-text text-transparent">
@@ -90,8 +90,8 @@ const HeroSection = () => {
             </h1>
 
             {/* Description */}
-            <p className={`${responsiveText.description} text-acmturquoise/80 max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto`}>
-              Your tech playground at Allegheny College. Where creativity meets code, and innovation knows no bounds.
+            <p className={`${responsiveText.description} font-['Raleway'] tracking-wider font-bold text-acmturquoise/80 max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto`}>
+              Your tech playground at Allegheny College. We are a chapter club of the Association for Computing Machinery Organization. 
             </p>
 
             {/* CTA Buttons */}
