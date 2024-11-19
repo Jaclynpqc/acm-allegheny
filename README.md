@@ -2,7 +2,7 @@ updated on: 03th November 2024, Sunday
 
 <div align="center" style="position: relative;">
     <a href="">
-        <img width="200" alt="ACM@Allegheny" src="/acm-ac/public/logo/logo_black_full.svg">
+        <img width="500" alt="ACM@Allegheny" src="/acm-ac/public/logo/logo_black_full.svg">
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: transparent;"></div>
     </a>
     <p style="font-family: Roboto, Calibri; font-size: 12pt; font-style: italic">ACM @ Allegheny College</p>
