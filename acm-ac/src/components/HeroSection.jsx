@@ -1,9 +1,20 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-/*
-LAYOUT GUIDELINES: 
-- Catchy slogan with interactive/animation background
-- CTA buttons ("Join Us")
+
+// TODO: For future maintaing purpose, please add comments
+
+
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
+
+/**
+ * ACM Chapter Hero Section Component
+ * 
+ * A dynamic and interactive hero section featuring:
+ * - Full viewport coverage
+ * - Responsive design up to 8xl screens
+ * - Interactive animations and floating shapes
+ * - Gradient effects and decorative elements
  */
 
 import React from 'react';
@@ -19,11 +30,18 @@ const FloatingShape = ({ children, className, delay }) => (
 );
 
 const HeroSection = () => {
+  const responsiveText = {
+    heading: "text-4xl sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl",
+    description: "text-lg sm:text-xl lg:text-2xl",
+    badge: "text-sm sm:text-base lg:text-lg",
+  };
+
   return (
-    <div className="relative py-12 px-8 bg-acmblack overflow-hidden">
+    // Changed to min-h-screen to ensure full viewport height
+    <div className="relative min-h-screen w-full bg-acmblack overflow-hidden">
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 opacity-10">
-        <div className="grid grid-cols-12 gap-4 h-full w-full">
+        <div className="grid grid-cols-6 sm:grid-cols-8 lg:grid-cols-12 gap-4 h-full w-full">
           {[...Array(144)].map((_, i) => (
             <div key={i} className="border border-acmturquoise/20" />
           ))}
@@ -31,58 +49,60 @@ const HeroSection = () => {
       </div>
 
       {/* Floating Shapes */}
-      <FloatingShape className="top-20 left-20" delay="0s">
-        <div className="w-8 h-8 rotate-45 bg-acmpink animate-pulse" />
+      <FloatingShape className="top-[10%] left-[10%] sm:top-20 sm:left-20" delay="0s">
+        <div className="w-6 h-6 sm:w-8 sm:h-8 rotate-45 bg-acmpink animate-pulse" />
       </FloatingShape>
       
-      <FloatingShape className="top-40 right-32" delay="0.5s">
-        <Star className="w-10 h-10 text-acmneon animate-spin" />
+      <FloatingShape className="top-[20%] right-[15%] sm:top-40 sm:right-32" delay="0.5s">
+        <Star className="w-8 h-8 sm:w-10 sm:h-10 text-acmneon animate-spin" />
       </FloatingShape>
       
-      <FloatingShape className="bottom-32 left-40" delay="0.3s">
-        <div className="w-6 h-6 rounded-full bg-acmturquoise animate-ping" />
+      <FloatingShape className="bottom-[20%] left-[20%] sm:bottom-32 sm:left-40" delay="0.3s">
+        <div className="w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-acmturquoise animate-ping" />
       </FloatingShape>
       
       <FloatingShape className="top-1/3 right-1/4" delay="0.7s">
-        <div className="w-12 h-12 rotate-12 bg-acmorange animate-pulse opacity-75" />
+        <div className="w-8 h-8 sm:w-12 sm:h-12 rotate-12 bg-acmorange animate-pulse opacity-75" />
       </FloatingShape>
 
-      {/* Main Content */}
-      <div className="relative container mx-auto px-6 pt-32 pb-24">
-        <div className="max-w-8xl mx-auto text-center space-y-8">
-          {/* Small Heading */}
-          <div className="inline-block animate-bounce">
-            <span className="bg-acmblue px-4 py-2 rounded-full text-white font-medium">
-              Welcome to ACM Chapter
-            </span>
-          </div>
+      {/* Main Content - Centered vertically and horizontally */}
+      <div className="relative h-full w-full flex items-center justify-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto text-center space-y-6 sm:space-y-8 py-12 sm:py-16 lg:py-20">
+            {/* Welcome Badge */}
+            <div className="inline-block animate-bounce">
+              <span className={`bg-acmblue px-6 py-3 rounded-full text-white font-medium ${responsiveText.badge}`}>
+                Welcome to ACM Chapter
+              </span>
+            </div>
 
-          {/* Main Heading */}
-          <h1 className="text-6xl font-bold leading-tight">
-            <span className="block text-white mb-4">
-              FOR THE MAKERS,
-            </span>
-            <span className="block text-acmneon animate-pulse">
-              THE DREAMERS,
-            </span>
-            <span className="block bg-gradient-to-r from-acmpink via-acmorange to-acmred bg-clip-text text-transparent">
-              THE DOERS
-            </span>
-          </h1>
+            {/* Main Heading */}
+            <h1 className={`${responsiveText.heading} font-bold leading-tight`}>
+              <span className="block text-white mb-4">
+                FOR THE MAKERS,
+              </span>
+              <span className="block text-acmneon animate-pulse">
+                THE DREAMERS,
+              </span>
+              <span className="block bg-gradient-to-r from-acmpink via-acmorange to-acmred bg-clip-text text-transparent">
+                THE DOERS
+              </span>
+            </h1>
 
-          {/* Description */}
-          <p className="text-xl text-acmturquoise/80 max-w-2xl mx-auto">
-            Your tech playground at Allegheny College. Where creativity meets code, and innovation knows no bounds.
-          </p>
+            {/* Description */}
+            <p className={`${responsiveText.description} text-acmturquoise/80 max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto`}>
+              Your tech playground at Allegheny College. Where creativity meets code, and innovation knows no bounds.
+            </p>
 
-          {/* CTA Buttons */}
-          <div className="flex justify-center gap-6 pt-8">
-            <button className="px-8 py-3 bg-acmblue hover:bg-acmblue/80 text-white rounded-lg font-medium transition-all duration-300 hover:scale-105">
-              Join Us
-            </button>
-            <button className="px-8 py-3 border-2 border-acmpink text-acmpink hover:bg-acmpink/10 rounded-lg font-medium transition-all duration-300 hover:scale-105">
-              Learn More
-            </button>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 pt-6 sm:pt-8">
+              <button className="px-8 py-4 bg-acmblue hover:bg-acmblue/80 text-white rounded-2xl font-medium transition-all duration-300 hover:scale-105">
+                Join Us
+              </button>
+              <button className="px-8 py-4 border-2 border-acmpink text-acmpink hover:bg-acmpink/10 rounded-2xl font-medium transition-all duration-300 hover:scale-105">
+                Learn More
+              </button>
+            </div>
           </div>
         </div>
       </div>
