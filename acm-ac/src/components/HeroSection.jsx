@@ -2,11 +2,6 @@
 /* eslint-disable no-unused-vars */
 
 // TODO: For future maintaing purpose, please add comments
-
-
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-
 /**
  * ACM Chapter Hero Section Component
  * 
@@ -107,7 +102,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Bottom Decorative Elements */}
+      {/* Bottom Gradient */}
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-acmblue via-acmpink to-acmneon" />
     </div>
   );
